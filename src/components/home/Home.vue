@@ -8,22 +8,22 @@
 		
 
 		<!-- slide -->
-		<home-slide>
+		<home-swiper>
 
-		</home-slide>
+		</home-swiper>
 		<!-- slide -->
 	</div>
 </template>
 
 <script>
-	import HomeHeader from 'components/home/pages/HomeHeader.vue'
-	import HomeSlide from 'components/home/pages/HomeSlide.vue'
+	import HomeHeader from 'components/home/pages/Header.vue'
+	import HomeSwiper from 'components/home/pages/Swiper.vue'
 
 	export default{
 		name:'Home',
 		components:{
 			'home-header' : HomeHeader,
-			'home-slide' : HomeSlide,
+			'home-swiper' : HomeSwiper,
 		}
 	}
 
