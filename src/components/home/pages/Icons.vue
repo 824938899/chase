@@ -11,7 +11,6 @@
 					<p class="icon-name">{{item.iconName}}</p>
 				</div>
 			</swiper-slide>
-			
 		</swiper>
 	</div>
 </template>
@@ -54,10 +53,10 @@
 	@import '~styles/mixins.styl';
 	.tm-icons-wrapper{
 		position: relative;
-		margin-top: .1rem;
+		margin-top: .01rem;
 		width: 100%;
 		height: 0;
-		padding-bottom: 50%;
+		padding-bottom: 55%;
 		background-color: #fff;
 		overflow: hidden;
 	}
@@ -71,6 +70,7 @@
 	.tm-icons-wrapper .icon-box{
 		position: relative;
 		float: left;
+		margin-top: .1rem;
 		width: 25%;
 		height: 0;
 		padding-bottom: 25%;

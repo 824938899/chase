@@ -3,7 +3,9 @@ ellipsis()
 	white-space: nowrap
 	text-overflow: ellipsis
 
-ellipsis2()
-	overflow: hidden
-	white-space: nowrap
-	text-overflow: ellipsis
+clerfix()
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
