@@ -18,21 +18,8 @@
 <script>
 	export default{
 		name: 'HomeIcons',
-		data: function(){
-			return {
-				icons: [
-					{id: '001', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png', iconName: '景点门票'}, 
-					{id: '002', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/4c/eac47dd8def8de02.png', iconName: '去赏花'},
-					{id: '003', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png', iconName: '成都必游'},
-					{id: '004', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png', iconName: '海洋馆'},
-					{id: '005', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png', iconName: '亲子游'},
-					{id: '006', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/57/1e29afd06f881102.png', iconName: '稻城亚丁'},
-					{id: '007', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png', iconName: '一日游'},
-					{id: '008', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png', iconName: '游乐场'},
-					{id: '009', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png', iconName: '直通车'},
-					{id: '0010', imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png', iconName: '赏秋色'}
-				]
-			}
+		props: {
+			icons: Array
 		},
 		computed: {
 			pages: function(){

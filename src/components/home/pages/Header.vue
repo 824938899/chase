@@ -8,7 +8,7 @@
 		<div class="tm-header-right">
 			<a href="" class="tm-select-city">
 				<span class="city">
-					成都
+					{{this.city}}
 					<i class="iconfont icon-down">&#xe653;</i>
 				</span>
 			</a>
@@ -20,12 +20,15 @@
 <script>
 	export default{
 		name:'HomeHeader',
-		data:function(){
+		props: {
+			city: String
+		},
+		data: function () {
 			return {
 				search:false,
 			}
 		},
-		methods:{
+		methods: {
 			clickSearch : function(e){
 				this.search = true;
 				

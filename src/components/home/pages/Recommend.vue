@@ -39,57 +39,8 @@
 <script>
 	export default{//export default
 		name: 'HomeRecommend',
-		data: function () {
-			return {
-				recommendList: [
-					{
-						id: '0001',
-						imgUrl: 'http://img1.qunarzz.com/sight/p0/1807/ad/ad574bfe6c9e1ceda3.img.png_200x200_ea7a0734.png',
-						title: '成都欢乐谷',
-						tag: '随买随用',
-						commentNum: '17480',
-						price: '75',
-						addres: '金牛区'
-					},
-
-					{
-						id: '0002',
-						imgUrl: 'http://img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_200x200_c0ef018f.jpg',
-						title: '峨眉山',
-						tag: '随买随用',
-						commentNum: '16382',
-						price: '90',
-						addres: '峨眉山市'
-					},
-					{
-						id: '0003',
-						imgUrl: 'http://img1.qunarzz.com/sight/p0/1612/1d/1d9a740c1f9e0efaa3.img.jpg_200x200_63285bd9.jpg',
-						title: '成都海昌极地海洋公园',
-						tag: '随买随用',
-						commentNum: '22270',
-						price: '49.9',
-						addres: '双流县'
-					},
-					{
-						id: '0004',
-						imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/ed/edd4063a442f30c1a3.img.jpg_200x200_724f9e6a.jpg',
-						title: '天堂岛海洋乐园',
-						tag: '随买随用',
-						commentNum: '4445',
-						price: '58',
-						addres: '武侯区'
-					},
-					{
-						id: '0005',
-						imgUrl: 'http://img1.qunarzz.com/sight/p0/1510/23/23fa69e071d77b48.water.jpg_200x200_a6b74058.jpg',
-						title: '成都环球中心',
-						tag: '随买随用',
-						commentNum: '1124',
-						price: '58',
-						addres: '武侯区'
-					},
-				]
-			}
+		props: {
+			recommendList: Array
 		}
 	}
 </script>

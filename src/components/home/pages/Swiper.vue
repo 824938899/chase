@@ -15,6 +15,9 @@
 <script>
 	export default{
 		name: 'HomeSlide',
+		props: {
+			swiperImages: Array
+		},
 		data: function(){
 			return {
 				swiperOption: {
@@ -23,11 +26,7 @@
 					pagination: {
 						el: '.swiper-pagination'
 					}
-				},
-				swiperImages: [
-					{id: '001', imgUrl: '../../../../static/images/banner1.jpg'},
-					{id: '002', imgUrl: '../../../../static/images/banner2.jpg'}
-				]
+				}
 			}
 		}
 	}
