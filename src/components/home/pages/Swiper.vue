@@ -1,6 +1,6 @@
 <template>
 	<div class="tm-swiper-wrapper">
-		<swiper :options="swiperOption">
+		<swiper :options="swiperOption" v-if="swiperShow">
 	    	<!-- slides -->
 		    <swiper-slide v-for="item of swiperImages" :key="item.id">
 		    	<a href="javascript:;"><img class="swiper-img" :src="item.imgUrl"></a>
@@ -27,6 +27,11 @@
 						el: '.swiper-pagination'
 					}
 				}
+			}
+		},
+		computed: {
+			swiperShow: function () {
+				return this.swiperImages.length
 			}
 		}
 	}

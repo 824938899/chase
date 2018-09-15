@@ -6,12 +6,12 @@
 			<input id="headerSearch" class="header-input" type="text" @blur="blurSearch"/>
 		</div>
 		<div class="tm-header-right">
-			<a href="" class="tm-select-city">
+			<router-link to="/city" class="tm-select-city">
 				<span class="city">
 					{{this.city}}
 					<i class="iconfont icon-down">&#xe653;</i>
 				</span>
-			</a>
+			</router-link>
 		</div>
 	</header>
 </template>
@@ -99,10 +99,11 @@
 	
 	.tm-header .tm-header-right .tm-select-city{
 		display: inline-block;
-		line-height: .88rem;
 	    margin-right: .04rem;
 	    color: #fff;
+	    line-height: .88rem;
 	}
+	
 	.tm-header .tm-header-right .city{
 		padding: 0 .22rem;
 		line-height: 1;

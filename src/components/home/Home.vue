@@ -38,13 +38,13 @@
 				axios.get('/api/index.json').then(this.getHomeInfoSuccess)
 			},
 			getHomeInfoSuccess: function (res) {
-				console.log(res)
 				if(res.data){
-					this.city = res.data.city;
-					this.swiperImages = res.data.swiperImages;
-					this.icons = res.data.icons
-					this.recommendList = res.data.recommendList;
-					this.weekendList = res.data.weekendList;
+					var data = res.data;
+					this.city = data.city;
+					this.swiperImages = data.swiperImages;
+					this.icons = data.icons;
+					this.recommendList = data.recommendList;
+					this.weekendList = data.weekendList;
 				}
 			}
 		},

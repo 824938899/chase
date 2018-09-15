@@ -1,6 +1,6 @@
 <template>
 	<div class="tm-icons-wrapper">
-		<swiper>
+		<swiper :options="swiperOption">
 			<swiper-slide v-for="(page, index) of pages" :key="index">
 				<div class="icon-box" 
 				v-for="item of page" 
@@ -20,6 +20,13 @@
 		name: 'HomeIcons',
 		props: {
 			icons: Array
+		},
+		data: function () {
+			return {
+				swiperOption: {
+					autoplay: false,
+				}
+			}
 		},
 		computed: {
 			pages: function(){
