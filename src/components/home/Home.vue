@@ -1,6 +1,6 @@
 <template>
 	<div class="home-page">
-		<home-header :city="city"></home-header>
+		<home-header></home-header>
 		<home-swiper :swiperImages="swiperImages"></home-swiper>
 		<home-icons :icons="icons"></home-icons>
 		<home-recommend :recommendList="recommendList"></home-recommend>
@@ -26,7 +26,6 @@
 		},
 		data: function () {
 			return {
-				city: '',
 				swiperImages: [],
 				icons: [],
 				recommendList: [],
@@ -40,7 +39,6 @@
 			getHomeInfoSuccess: function (res) {
 				if(res.data){
 					var data = res.data;
-					this.city = data.city;
 					this.swiperImages = data.swiperImages;
 					this.icons = data.icons;
 					this.recommendList = data.recommendList;

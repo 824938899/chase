@@ -1,5 +1,4 @@
-{	"city": "成都",
-	"swiperImages" : [
+{	"swiperImages" : [
 			{"id": "001", "imgUrl": "../../../../static/images/banner1.jpg"},
 			{"id": "002", "imgUrl": "../../../../static/images/banner2.jpg"}
 		],

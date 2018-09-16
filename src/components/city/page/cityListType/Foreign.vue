@@ -4,7 +4,7 @@
 		    <div class="hot-cities">
 		    	<h2 class="hot-cts-title">热门城市</h2>
 		    	<ul class="tm-list list-tr3">
-		    		<li v-for="item of hotCities" :key="item.id"><a href="javascript:;">{{item.name}}</a></li>
+		    		<li v-for="item of hotCities" :key="item.id"><a href="javascript:;" @click="cityClick(item.name)">{{item.name}}</a></li>
 		    	</ul>
 		    </div>
 		    <div class="alphabet-menu">
@@ -19,7 +19,7 @@
 		    	<h2 class="alphabet-menu-title">{{key}}</h2>
 		    	<ul class="tm-list list-tr4">
 		    		<li v-for="items in item" :key="items.id">
-		    			<a href="javascript:;">{{items.name}}</a>
+		    			<a href="javascript:;" @click="cityClick(items.name)">{{items.name}}</a>
 		    		</li>
 		    	</ul>
 		    </div>
@@ -55,6 +55,12 @@
 				var e = e || e.event,
 					target = e.target || e.srcElement;
 					this.letter = target.innerText;
+			},
+			cityClick: function (city) {
+				this.$store.dispatch('changeCityName', city)//内容分发
+				this.$router.push({
+					name: 'Home'
+				})
 			}
 		},
 		mounted: function () {

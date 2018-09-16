@@ -18,15 +18,18 @@
 
 
 <script>
+	import { mapState } from 'vuex'
 	export default{
 		name:'HomeHeader',
-		props: {
-			city: String
-		},
 		data: function () {
 			return {
 				search:false,
 			}
+		},
+		computed: {
+			...mapState({
+				city: 'city'
+			})
 		},
 		methods: {
 			clickSearch : function(e){
