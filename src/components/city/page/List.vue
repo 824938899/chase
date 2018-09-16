@@ -7,7 +7,7 @@
 		</div>
 		<div class="city-list">
 			<keep-alive>
-				<component :is="cityType.contents[cityType.index]"></component>
+				<component :hotCities="hotCities" :cities="cities" :is="cityType.contents[cityType.index]"></component>
 			</keep-alive>
 		</div>
 	</div>
@@ -16,11 +16,16 @@
 <script>
 	import CityDomestic from 'components/city/page/cityListType/Domestic'
 	import CityForeign from 'components/city/page/cityListType/Foreign'
+	import axios from 'axios'
 	export default {
 		name: 'CityList',
 		components: {
 			'city-domestic': CityDomestic,
 			'city-foreign': CityForeign
+		},
+		props: {
+			cities: Object,
+			hotCities: Array
 		},
 		data: function () {
 			return {
