@@ -1,10 +1,10 @@
 <template>
-	<div class="wrapper" id="city-domestic">
+	<div class="wrapper" id="city-domestic" ref="listWrapper">
 		  <div class="content">
 		    <div class="hot-cities">
 		    	<h2 class="hot-cts-title">热门城市</h2>
 		    	<ul class="tm-list list-tr3">
-		    		<li><a href="">北京</a></li>
+		    		<li><a href="">1</a></li>
 		    		<li><a href="">北京</a></li>
 		    		<li><a href="">北京</a></li>
 		    		<li><a href="">北京</a></li>
@@ -82,7 +82,12 @@
 </template>
 
 <script>
+	import BScroll from 'better-scroll'
 	export default {
-		name: 'CityDomestic'
+		name: 'CityDomestic',
+		mounted: function () {
+			this.scroll = new BScroll(this.$refs.listWrapper)
+		}
+
 	}
 </script>

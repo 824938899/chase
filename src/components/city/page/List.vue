@@ -2,19 +2,20 @@
 	<div class="city-container">
 		<div class="switch-tab">
 			<div class="tab-btn-box">
-				<a href="javascript:;" class="tab-item active" @click="cityTypeSwitch('domestic')">境内</a>
-				<a href="javascript:;" class="tab-item" @click="cityTypeSwitch('foreign')">境外·港澳台</a>
+				<a href="javascript:;" v-for="(item,index) in cityType.tabs" :key="index" :class="{active:index == cityType.index}" @click="cityTypeSwitch(index)" class="tab-item">{{item}}</a>
 			</div>
 		</div>
-		<city-domestic></city-domestic>
-		<city-foreign></city-foreign>
+		<div class="city-list">
+			<keep-alive>
+				<component :is="cityType.contents[cityType.index]"></component>
+			</keep-alive>
+		</div>
 	</div>
 </template>
 
 <script>
 	import CityDomestic from 'components/city/page/cityListType/Domestic'
 	import CityForeign from 'components/city/page/cityListType/Foreign'
-
 	export default {
 		name: 'CityList',
 		components: {
@@ -23,13 +24,16 @@
 		},
 		data: function () {
 			return {
-				cityType: 'domestic'
+				cityType: {
+					tabs: ['境内', '境外·港澳台'],
+					contents: ['city-domestic', 'city-foreign'],
+					index: 0
+				}
 			}
 		},
 		methods: {
-			cityTypeSwitch: function (type) {
-				console.log(e);
-				this.cityType = type;
+			cityTypeSwitch: function (index) {
+				this.cityType.index = index;
 			}
 		}
 	}
@@ -67,7 +71,25 @@
 	
 	.city-container >>> h2{
 		font-size: .24rem;
-    	margin: .24rem .3rem;
+    	padding: .24rem .3rem;
+	}
+	
+	.city-list{
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		top: 1.68rem;
+		right: 0;
+		bottom: 0;
+	}
+	
+	.city-list >>> .wrapper {
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
 	}
 	
 	.city-container >>> .tm-list{
