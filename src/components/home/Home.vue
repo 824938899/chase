@@ -15,6 +15,7 @@
 	import HomeRecommend from 'components/home/pages/Recommend'
 	import HomeWeekend from 'components/home/pages/Weekend'
 	import axios from 'axios'
+	import { mapState } from 'vuex'
 	export default{
 		name:'Home',
 		components:{
@@ -26,15 +27,21 @@
 		},
 		data: function () {
 			return {
+				lastCity: '', //保存上一次city值
 				swiperImages: [],
 				icons: [],
 				recommendList: [],
 				weekendList: [] 
 			}
 		},
+		computed:{
+			...mapState({
+				curCity: 'city' //this.$store.state.city ==> this.curCity => 点击后的city
+			})
+		},
 		methods:{
 			getHomeInfo: function () {
-				axios.get('/api/index.json').then(this.getHomeInfoSuccess)
+				axios.get('/api/index.json?city=' + this.curCity).then(this.getHomeInfoSuccess)
 			},
 			getHomeInfoSuccess: function (res) {
 				if(res.data){
@@ -48,7 +55,13 @@
 		},
 		mounted: function() {
 			this.getHomeInfo();
-
+			this.lastCity = this.curCity
+		},
+		activated: function () {
+			if (this.lastCity !== this.curCity) { //如果city发生改变就再次进行ajax请求
+				this.lastCity = this.curCity 
+				this.getHomeInfo()
+			}
 		}
 	}
 
