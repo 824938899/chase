@@ -46,10 +46,10 @@
 			getHomeInfoSuccess: function (res) {
 				if(res.data){
 					var data = res.data;
-					this.swiperImages = data.swiperImages;
-					this.icons = data.icons;
-					this.recommendList = data.recommendList;
-					this.weekendList = data.weekendList;
+					this.swiperImages = data.swiperImages
+					this.icons = data.icons
+					this.recommendList = data.recommendList
+					this.weekendList = data.weekendList
 				}
 			}
 		},

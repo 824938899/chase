@@ -38,7 +38,7 @@
 		},
 		methods: {
 			cityTypeSwitch: function (index) {
-				this.cityType.index = index;
+				this.cityType.index = index
 			}
 		}
 	}

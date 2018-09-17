@@ -44,17 +44,17 @@
 		computed: {
 			letters: function () {
 				var letters = [];
-				for(var i in this.cities){
+				for (var i in this.cities) {
 					letters.push(i)
 				}
-				return letters;
+				return letters
 			}
 		},
 		methods: {
 			clickLetter: function (e) {
 				var e = e || e.event,
-					target = e.target || e.srcElement;
-					this.letter = target.innerText;
+					target = e.target || e.srcElement
+					this.letter = target.innerText
 			},
 			cityClick: function (city) {
 				this.$store.dispatch('changeCityName', city)//内容分发
@@ -69,9 +69,9 @@
 		},
 		watch: {
 			letter: function () {
-				if(this.letter){
-					var element = this.$refs[this.letter][0];
-					this.scroll.scrollToElement(element);
+				if (this.letter) {
+					var element = this.$refs[this.letter][0]
+					this.scroll.scrollToElement(element)
 				}
 			}
 		}

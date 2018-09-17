@@ -33,15 +33,15 @@
 		},
 		methods: {
 			clickSearch : function(e){
-				this.search = true;
+				this.search = true
 				
-				var target = e.target || srcElement;
+				var target = e.target || srcElement
 				
-				target.nextElementSibling.focus();
+				target.nextElementSibling.focus()
 			},
 
 			blurSearch: function(){
-				this.search = false;
+				this.search = false
 			}
 
 		}

@@ -32,8 +32,10 @@
 			pages: function(){
 				var pages = [];
 				this.icons.forEach(function(item, index){
-					var page = Math.floor(index / 8);
-					if(!pages[page]) pages[page] = [];
+					var page = Math.floor(index / 8)
+					if (!pages[page]) {
+						pages[page] = []
+					}
 					pages[page].push(item)
 				})
 				return pages

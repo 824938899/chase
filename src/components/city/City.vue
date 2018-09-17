@@ -29,9 +29,9 @@
 			},
 			getCityInfoSuccess: function (res) {
 				if(res.data.ret){
-					var data = res.data.data;
-					this.cities = data.cities;
-					this.hotCities = data.hotCities;
+					var data = res.data.data
+					this.cities = data.cities
+					this.hotCities = data.hotCities
 				}
 			}	
 

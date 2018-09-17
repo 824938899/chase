@@ -1,6 +1,6 @@
 
 
-var defaultCity = '广东';
+var defaultCity = '成都';
 
 try {
 	if(localStorage.city) {
