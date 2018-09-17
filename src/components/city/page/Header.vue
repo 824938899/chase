@@ -14,9 +14,9 @@
 </script>
 
 <style lang="stylus" scoped>
-
 	@import '~styles/variables.styl';
 	@import '~styles/mixins.styl';
+	
 	.tm-header{
 		position: relative;
 		height: .88rem;

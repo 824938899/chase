@@ -48,6 +48,7 @@
 		},
 		mounted: function() {
 			this.getHomeInfo();
+
 		}
 	}
 

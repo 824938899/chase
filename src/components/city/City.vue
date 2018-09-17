@@ -1,7 +1,9 @@
 <template>
 	<div class="city-page">
 		<city-header></city-header>
-		<city-list :cities="cities" :hotCities="hotCities"></city-list>
+		<keep-alive>
+			<city-list :cities="cities" :hotCities="hotCities"></city-list>
+		</keep-alive>
 	</div>
 </template>
 
