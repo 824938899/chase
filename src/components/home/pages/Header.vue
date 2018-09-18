@@ -1,6 +1,6 @@
 <template>
 	<header class="tm-header">
-		<a href="" class="tm-header-left iconfont">&#xe600;</a>
+		<a href="javascript:;" class="tm-header-left iconfont">&#xe600;</a>
 		<div class="tm-header-title">
 			<div class="kw" @click="clickSearch" v-show="!search"><span class="iconfont icon-search">&#xe651;</span>输入城市/景点/游玩主题</div>
 			<input id="headerSearch" class="header-input" type="text" @blur="blurSearch"/>
