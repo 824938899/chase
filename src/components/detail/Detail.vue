@@ -1,7 +1,10 @@
 <template>
-	<div class="page">
+	<div class="tm-page">
 		<detail-header></detail-header>
 		<detail-banner></detail-banner>
+		<div class="content-box">
+			
+		</div>
 	</div>
 </template>
 
@@ -19,5 +22,7 @@
 </script>
 
 <style lang="stylus" scoped>
-	
+	.content-box{
+		height: 45rem;
+	}
 </style>

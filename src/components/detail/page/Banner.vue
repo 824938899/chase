@@ -1,8 +1,6 @@
 <template>
 	<div class="tm-headfigure">
-		<router-link to="/" class="back-btn">
-			<span class="iconfont">&#xe600;</span>
-		</router-link>
+		
 		<div class="detail-banner">
 			<router-link to="/detailImages" class="to-gallery">
 				<img class="detail-banner-img" src="//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg">
@@ -63,22 +61,6 @@
 	}
 	.tm-headfigure .detail-banner .detail-banner-img{
 		width: 100%;
-	}
-	.tm-headfigure .back-btn{
-		position: absolute;
-		top: .1rem;
-		left: .1rem;
-		width: .72rem;
-		height: .72rem;
-		border-radius: 50%;
-		background-color: rgba(0,0,0,.5);
-		text-align: center;
-	}
-	.tm-headfigure .back-btn .iconfont{
-		font-size: .5rem;
-		line-height: .72rem;
-		color: #fff;
-		font-weight: 500;
 	}
 	
 	.tm-headfigure .detail-banner .detail-video {
