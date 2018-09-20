@@ -11,74 +11,39 @@
 		</div>
 		<div class="detail-images">
 			<ul class="detail-images-list">
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1801/41/418630d0998c5bcaa3.img.jpg_350x240_2bbee3d6.jpg">
-					</div>
-				</li>
-				<li class="list-item">
-					<div class="img-box">
-						<img src="http://img1.qunarzz.com/sight/p0/1704/a5/a59677101e07d38a3.img.jpg_350x240_02a98cf1.jpg">
-					</div>
+				<li class="list-item" v-for="(item, index) in imagesList" :key="index">
+					<a href="javascript:;" class="img-box" @click="showGallery">
+						<img :src="item">
+					</a>
 				</li>
 			</ul>
 		</div>
+		<public-gallery :imagesList="imagesList" @closeGallery="Galleryclose" v-show="isGalleryShow"></public-gallery>
 	</div>
 </template>
 
 <script>
+	import PublicGallery from 'components/public/Gallery'
 	export default {
-		name: 'DetailImages'
+		name: 'DetailImages',
+		data: function () {
+			return {
+				imagesList: ['//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg', '//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg'],
+				isGalleryShow: false
+			}
+		},
+		components: {
+			'public-gallery': PublicGallery
+		},
+		methods: {
+			showGallery: function (){
+				this.isGalleryShow = true;
+			},
+			Galleryclose: function (galleryShow) { //子组件emit  galleryShowFun
+				this.isGalleryShow = galleryShow;
+			}
+		}
+
 	}
 </script>
 
@@ -159,6 +124,10 @@
 		box-sizing: border-box;
 	}
 	
+	.detail-images .list-item .img-box{
+		display: block;
+		width: 100%;
+	}
 	.detail-images .list-item .img-box img{
 		width: 100%;
 	}
