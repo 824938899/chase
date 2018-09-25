@@ -3,17 +3,17 @@
 		
 		<div class="detail-banner">
 			<router-link to="/detailImages" class="to-gallery">
-				<img class="detail-banner-img" src="//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg">
+				<img class="detail-banner-img" :src="bannerImage">
 			</router-link>
 			<div class="detail-imgswipeicon">
-				<span class="iconfont">&#xe691;</span><em class="detail-imgswipeicon-num">11</em>
+				<span class="iconfont">&#xe691;</span><em class="detail-imgswipeicon-num">{{galleryImagesLen}}</em>
 			</div>
-			<div class="detail-video">
+			<div class="detail-video" v-if="isVideo">
 				<span class="detail-video-text">视频</span>
 				<span class="iconfont">&#xe638;</span>
 			</div>
 			<div class="detail-title">
-				成都欢乐谷(AAAA景区)成都欢乐谷(AAAA景区)成都欢乐谷(AAAA景区)成都欢乐谷(AAAA景区)成都欢乐谷(AAAA景区)
+				{{bannerTitle}}
 			</div>
 		</div>
 	</div>
@@ -21,7 +21,13 @@
 
 <script>
 	export default {
-		name: 'DetailBanner'
+		name: 'DetailBanner',
+		props: {
+			bannerTitle: String,
+			bannerImage: String,
+			galleryImagesLen: Number,
+			isVideo: Boolean
+		}
 	}
 
 </script>

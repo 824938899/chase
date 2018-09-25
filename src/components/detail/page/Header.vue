@@ -9,7 +9,7 @@
 			<router-link to="/" class="tm-header-left">
 				<span class="iconfont">&#xe600;</span>
 			</router-link>
-			<h1 class="tm-header-title">成都海昌极地海洋公园</h1>
+			<h1 class="tm-header-title">{{detailTitle}}</h1>
 		</header>
 	</div>
 </template>
@@ -17,6 +17,9 @@
 <script>
 	export default{
 		name: 'DetailHeader',
+		props: {
+			detailTitle: String
+		},
 		data: function () {
 			return {
 				showHeaderBack: true,

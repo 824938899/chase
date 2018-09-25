@@ -11,29 +11,34 @@
 		</div>
 		<div class="detail-images">
 			<ul class="detail-images-list">
-				<li class="list-item" v-for="(item, index) in imagesList" :key="index">
+				<li class="list-item" v-for="(item, index) in galleryImages" :key="index">
 					<a href="javascript:;" class="img-box" @click="showGallery">
 						<img :src="item">
 					</a>
 				</li>
 			</ul>
 		</div>
-		<public-gallery :imagesList="imagesList" @closeGallery="Galleryclose" v-show="isGalleryShow"></public-gallery>
+		<public-gallery :imagesList="galleryImages" @closeGallery="Galleryclose" v-show="isGalleryShow"></public-gallery>
 	</div>
 </template>
 
 <script>
 	import PublicGallery from 'components/public/Gallery'
+	import { mapState } from 'vuex'
 	export default {
 		name: 'DetailImages',
 		data: function () {
 			return {
-				imagesList: ['//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg', '//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg'],
 				isGalleryShow: false
 			}
 		},
 		components: {
-			'public-gallery': PublicGallery
+			'public-gallery': PublicGallery,
+		},
+		computed: {
+			...mapState({
+				galleryImages: 'galleryImages'
+			})
 		},
 		methods: {
 			showGallery: function (){
@@ -43,7 +48,6 @@
 				this.isGalleryShow = galleryShow;
 			}
 		}
-
 	}
 </script>
 
