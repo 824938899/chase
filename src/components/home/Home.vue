@@ -46,6 +46,7 @@
 			getHomeInfoSuccess: function (res) {
 				if(res.data){
 					var data = res.data;
+					console.log(data)
 					this.swiperImages = data.swiperImages
 					this.icons = data.icons
 					this.recommendList = data.recommendList

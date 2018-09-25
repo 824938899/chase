@@ -3,5 +3,4 @@ export default {
   		state.city = city
   		localStorage.city = city
   	}
-
 }

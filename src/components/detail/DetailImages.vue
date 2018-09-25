@@ -48,8 +48,8 @@
 </script>
 
 <style lang="stylus" scoped>
-	@import '~styles/variables.styl'
-	@import '~styles/mixins.styl'
+	@import '~styles/variables.styl';
+	@import '~styles/mixins.styl';
 	.tm-page {
 		position: absolute;
 		top: 0;
