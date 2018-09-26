@@ -5,6 +5,7 @@ export default {
   	},
   	chengeGalleryImages: function (state, galleryImages) {
   		state.galleryImages = galleryImages
+  		localStorage.galleryImages = galleryImages
   	},
   	chengeGalleryImagesNum: function (state, galleryImagesNum) {
   		state.gelleryImagesNum = galleryImagesNum

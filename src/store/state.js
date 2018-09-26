@@ -1,6 +1,6 @@
 
 
-var defaultCity = '成都';
+var defaultCity = '成都'
 
 try {
 	if(localStorage.city) {
@@ -10,9 +10,19 @@ try {
 	
 }
 
+var defaultGalleryImages = ''
+
+try {
+	if(localStorage.galleryImages) {
+		defaultGalleryImages = localStorage.galleryImages.split(",") //字符串转换成数组
+	}
+} catch (e) {
+	console.log(e);
+}
+
 
 export default {
 	city: defaultCity,
-	galleryImages: '',
+	galleryImages: defaultGalleryImages,
 	chengeGalleryImagesNum: ''
 }
