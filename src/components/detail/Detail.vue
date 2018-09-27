@@ -30,12 +30,14 @@
 				bannerImage: '',
 				categoryList: [],
 				galleryImages: [],
-				isVideo: false
+				isVideo: false,
+				curId: ''
 			}
 		},
 		methods: {
 			getDetailInfo: function () {
-				axios.get('/api/detail.json').then(this.getDetailInfoSuccess)
+				axios.get('/api/detail.json?id=' + this.$route.params.id).then(this.getDetailInfoSuccess)
+				this.curId = this.$route.params.id
 			},
 			getDetailInfoSuccess: function (res) {
 				if(res.data.ret && res.data.data){
@@ -52,6 +54,12 @@
 		},
 		mounted: function () {
 			this.getDetailInfo()
+		},
+		activated: function () {
+			if(this.$route.params.id !== this.curId){
+				this.curId = this.$route.params.id
+				this.getDetailInfo()
+			}
 		}
 	}
 </script>

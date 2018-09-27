@@ -25,5 +25,11 @@ export default new Router( {
       name: 'DetailImages',
       component: DetailImages
     }
-  ]
+  ], 
+  scrollBehavior(to, from, savedPosition){
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

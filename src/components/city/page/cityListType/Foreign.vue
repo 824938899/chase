@@ -64,7 +64,9 @@
 			}
 		},
 		mounted: function () {
-			this.scroll = new BScroll(this.$refs.listWrapper)
+			this.scroll = new BScroll(this.$refs.listWrapper, {
+				click: true
+			})
 			
 		},
 		watch: {

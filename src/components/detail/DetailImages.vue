@@ -18,12 +18,17 @@
 				</li>
 			</ul>
 		</div>
-		<public-gallery :imagesList="galleryImages" @closeGallery="Galleryclose" v-show="isGalleryShow"></public-gallery>
+		
+
+		<public-fade>
+			<public-gallery :imagesList="galleryImages" @closeGallery="Galleryclose" v-show="isGalleryShow"></public-gallery>
+		</public-fade>
 	</div>
 </template>
 
 <script>
 	import PublicGallery from 'components/public/Gallery'
+	import PublicFade from 'components/public/Fade'
 	import { mapState } from 'vuex'
 	export default {
 		name: 'DetailImages',
@@ -34,6 +39,7 @@
 		},
 		components: {
 			'public-gallery': PublicGallery,
+			'public-fade': PublicFade,
 		},
 		computed: {
 			...mapState({
